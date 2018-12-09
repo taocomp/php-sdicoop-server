@@ -8,7 +8,7 @@ try
 
     $wsdl = __DIR__ . '/../wsdl/TrasmissioneFatture_v1.1.wsdl';
     $srv = new WebService($wsdl);
-    $srv->setClass('TrasmissioneFattureHandler');
+    $srv->setClass('\Taocomp\Sdicoop\TrasmissioneFattureHandler');
     $srv->handle();
 }
 catch (\Exception $e)

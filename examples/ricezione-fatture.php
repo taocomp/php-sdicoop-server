@@ -8,7 +8,7 @@ try
 
     $wsdl = __DIR__ . '/../wsdl/RicezioneFatture_v1.0.wsdl';
     $srv = new WebService($wsdl);
-    $srv->setClass('RicezioneFattureHandler');
+    $srv->setClass('\Taocomp\Sdicoop\RicezioneFattureHandler');
     $srv->handle();
 }
 catch (\Exception $e)
