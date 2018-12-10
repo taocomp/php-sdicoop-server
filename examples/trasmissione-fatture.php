@@ -4,7 +4,7 @@ use \Taocomp\Sdicoop\WebService;
 
 try
 {
-    require_once(__DIR__ . '/../bootstrap.php');
+    require_once(__DIR__ . '/../autoload.php');
 
     $wsdl = __DIR__ . '/../wsdl/TrasmissioneFatture_v1.1.wsdl';
     $srv = new WebService($wsdl);
