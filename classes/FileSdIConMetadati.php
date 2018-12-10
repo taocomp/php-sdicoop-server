@@ -5,20 +5,22 @@ class FileSdIConMetadati extends FileSdI
     public $NomeFileMetadati = null;
     public $Metadati = null;
 
-    protected function setFromObject( \StdClass $obj )
+    public function __construct( \StdClass $parametersIn = null )
     {
-        parent::setFromObject($obj);
-        
-        if (!property_exists($obj, 'NomeFileMetadati')) {
-            throw new \Exception("Cannot find property 'NomeFileMetadati'");
-        }
+        parent::__construct($parametersIn);
 
-        if (!property_exists($obj, 'Metadati')) {
-            throw new \Exception("Cannot find property 'Metadati'");
-        }
+        if ($parametersIn) {
+            if (!property_exists($parametersIn, 'NomeFileMetadati')) {
+                throw new \Exception("Cannot find property 'NomeFileMetadati'");
+            }
 
-        $this->NomeFileMetadati = $obj->NomeFileMetadati;
-        $this->Metadati = $obj->Metadati;
+            if (!property_exists($parametersIn, 'Metadati')) {
+                throw new \Exception("Cannot find property 'Metadati'");
+            }
+
+            $this->NomeFileMetadati = $parametersIn->NomeFileMetadati;
+            $this->Metadati = $parametersIn->Metadati;
+        }
     }
 
     public function __toString()
