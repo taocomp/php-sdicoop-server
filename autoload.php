@@ -20,9 +20,6 @@
  * along with php-sdicoop-server.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-ini_set("soap.wsdl_cache_enabled", 0);
-ini_set('soap.wsdl_cache_ttl', 0);
-
 // Autoload classes
 // https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
 spl_autoload_register(function ($class) {
