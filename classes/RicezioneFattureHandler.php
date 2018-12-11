@@ -47,5 +47,12 @@ class RicezioneFattureHandler
         // SOAP request
         $request = new FileSdI($parametersIn);
         WebService::log(__FUNCTION__ . " $request");
+
+        // Process request
+        // ------------------------------------------------
+        // $id               = $request->IdentificativoSdI;
+        // $filename         = $request->NomeFile;
+        // $file             = $request->File;
+        // ------------------------------------------------
     }
 }
