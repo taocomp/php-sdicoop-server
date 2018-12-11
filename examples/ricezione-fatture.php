@@ -28,10 +28,11 @@ use \Taocomp\Sdicoop\WebService;
 try
 {
     require_once(__DIR__ . '/../autoload.php');
+    require_once(__DIR__ . '/RicezioneFattureHandler.php');
 
     $wsdl = __DIR__ . '/../wsdl/RicezioneFatture_v1.0.wsdl';
     $srv = new WebService($wsdl);
-    $srv->setClass('\Taocomp\Sdicoop\RicezioneFattureHandler');
+    $srv->setClass('\RicezioneFattureHandler');
     $srv->handle();
 }
 catch (\Exception $e)
