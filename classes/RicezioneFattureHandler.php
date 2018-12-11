@@ -45,7 +45,7 @@ class RicezioneFattureHandler
     public function NotificaDecorrenzaTermini( \StdClass $parametersIn )
     {
         // SOAP request
-        $fileSdI = new FileSdI($parametersIn);
+        $request = new FileSdI($parametersIn);
         WebService::log(__FUNCTION__ . " $request");
     }
 }
