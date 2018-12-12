@@ -1,12 +1,13 @@
-* PHP SdICoop - Server
+#+TITLE: PHP SdICoop - Server
+
 Italian e-invoicing: PHP classes for implementing your web services required by the [[https://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm?l=en][Italian Exchange System (SdI - "Sistema di Interscambio")]].
 
 Please refer to
 - [[https://github.com/taocomp/php-sdicoop-client][PHP SdICoop - Client]] to connect to SdI web services
 - [[https://github.com/taocomp/php-sdicoop-invoice][PHP SdICoop - Invoice]] for italian electronic invoice management
 
-** Quickstart
-*** Web Service "TrasmissioneFatture"
+* Quickstart
+** Web Service "TrasmissioneFatture"
 Just include ~examples/tramissione-fatture.php~ in your endpoint. For example, if your test endpoint is
 
 #+BEGIN_SRC 
@@ -20,7 +21,7 @@ put the following code in your ~index.php~:
 require_once('/path/to/php-sdicoop-server/examples/trasmissione-fatture.php');
 #+END_SRC
 
-*** Web Service "RicezioneFatture"
+** Web Service "RicezioneFatture"
 Just include ~examples/ricezione-fatture.php~ in your endpoint. For example, if your test endpoint is
 
 #+BEGIN_SRC 
