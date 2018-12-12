@@ -24,8 +24,6 @@ use \Taocomp\Sdicoop\FileSdIConMetadati;
 use \Taocomp\Sdicoop\RispostaRiceviFatture;
 use \Taocomp\Sdicoop\WebService;
 
-define('R_FILES_DIR', '/var/www/files/ricezione');
-
 class RicezioneFattureHandler
 {
     public function RiceviFatture( \StdClass $parametersIn )
@@ -43,8 +41,8 @@ class RicezioneFattureHandler
         // $metadata         = $request->Metadati;
         // ------------------------------------------------
         // For example, to save files:
-        file_put_contents(R_FILES_DIR . "/{$request->NomeFile}", $request->File);
-        file_put_contents(R_FILES_DIR . "/{$request->NomeFileMetadati}", $request->Metadati);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFileMetadati}", $request->Metadati);
         
         // SOAP response        
         return new RispostaRiceviFatture(RispostaRiceviFatture::ER01);
@@ -63,6 +61,6 @@ class RicezioneFattureHandler
         // $file             = $request->File;
         // ------------------------------------------------
         // For example, to save file:
-        file_put_contents(R_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
 }

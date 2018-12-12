@@ -22,8 +22,6 @@
 use Taocomp\Sdicoop\FileSdI;
 use Taocomp\Sdicoop\WebService;
 
-define('T_FILES_DIR', '/var/www/files/trasmissione');
-
 class TrasmissioneFattureHandler
 {
     public function RicevutaConsegna( \StdClass $parametersIn )
@@ -39,7 +37,7 @@ class TrasmissioneFattureHandler
         // $file     = $request->File;
         // ----------------------------------------
         // For example, to save file:
-        file_put_contents(T_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
 
     public function NotificaMancataConsegna( \StdClass $parametersIn )
@@ -55,7 +53,7 @@ class TrasmissioneFattureHandler
         // $file     = $request->File;
         // ----------------------------------------
         // For example, to save file:
-        file_put_contents(T_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
 
     public function NotificaScarto( \StdClass $parametersIn )
@@ -71,7 +69,7 @@ class TrasmissioneFattureHandler
         // $file     = $request->File;
         // ----------------------------------------
         // For example, to save file:
-        file_put_contents(T_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
     
     public function NotificaEsito( \StdClass $parametersIn )
@@ -87,7 +85,7 @@ class TrasmissioneFattureHandler
         // $file     = $request->File;
         // ----------------------------------------
         // For example, to save file:
-        file_put_contents(T_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
 
     public function NotificaDecorrenzaTermini( \StdClass $parametersIn )
@@ -103,7 +101,7 @@ class TrasmissioneFattureHandler
         // $file     = $request->File;
         // ----------------------------------------
         // For example, to save file:
-        file_put_contents(T_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
 
     public function AttestazioneTrasmissioneFattura( \StdClass $parametersIn )
@@ -119,6 +117,6 @@ class TrasmissioneFattureHandler
         // $file     = $request->File;
         // ----------------------------------------
         // For example, to save file:
-        file_put_contents(T_FILES_DIR . "/{$request->NomeFile}", $request->File);
+        // file_put_contents("/some/path/{$request->NomeFile}", $request->File);
     }
 }

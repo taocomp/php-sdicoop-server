@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Copyright (C) 2018 Taocomp s.r.l.s. <https://taocomp.com>
  *
