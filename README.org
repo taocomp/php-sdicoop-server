@@ -1,0 +1,15 @@
+* PHP SdICoop - Server
+** Quickstart
+*** Web Service "TrasmissioneFatture"
+Just include ~examples/tramissione-fatture.php~ in your test endpoint. For example, if your endpoint is
+
+#+BEGIN_SRC 
+https://test.example.com/trasmissione/index.php
+#+END_SRC
+
+put the following code in your ~index.php~:
+
+#+BEGIN_SRC 
+<?php
+require_once('/var/www/php-sdicoop-server/examples/trasmissione-fatture.php');
+#+END_SRC
