@@ -1,6 +1,6 @@
 #+TITLE: PHP SdICoop - Server
 
-Italian e-invoicing: PHP classes for implementing your web services required by the [[https://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm?l=en][Italian Exchange System (SdI - "Sistema di Interscambio")]].
+Italian e-invoicing: PHP package for implementing your web services required by the [[https://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm?l=en][Italian Exchange System (SdI - "Sistema di Interscambio")]].
 
 Please refer to
 - [[https://github.com/taocomp/php-sdicoop-client][PHP SdICoop - Client]] to connect to SdI web services
