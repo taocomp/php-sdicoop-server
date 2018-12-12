@@ -35,6 +35,9 @@ put the following code in your ~index.php~:
 require_once('/path/to/php-sdicoop-server/examples/ricezione-fatture.php');
 #+END_SRC
 
+* Getting started
+TODO
+
 * Server configuration, validation tests and more
 See [[https://forum.italia.it/c/fattura-pa][Forum Italia - Fatturazione Elettronica]] for server configuration, validation tests, etc.
 
