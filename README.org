@@ -1,5 +1,9 @@
 * PHP SdICoop - Server
-Italian e-invoicing: PHP classes for implementing your web services needed by the [[https://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm?l=en][Italian Exchange System (SdI - "Sistema di Interscambio")]].
+Italian e-invoicing: PHP classes for implementing your web services required by the [[https://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm?l=en][Italian Exchange System (SdI - "Sistema di Interscambio")]].
+
+Please refer to
+- [[https://github.com/taocomp/php-sdicoop-client][PHP SdICoop - Client]] to connect to SdI web services
+- [[https://github.com/taocomp/php-sdicoop-invoice][PHP SdICoop - Invoice]] for italian electronic invoice management
 
 ** Quickstart
 *** Web Service "TrasmissioneFatture"
@@ -29,3 +33,14 @@ put the following code in your ~index.php~:
 <?php
 require_once('/path/to/php-sdicoop-server/examples/ricezione-fatture.php');
 #+END_SRC
+
+* Server configuration, validation tests and more
+See [[https://forum.italia.it/c/fattura-pa][Forum Italia - Fatturazione Elettronica]] for any issue related to server configuration, validation tests, etc.
+
+If you need a "ready to start" solution or a consultancy for including our code in your PHP project, please feel free to contact us at [[mailto:sdicoop@taocomp.com]].
+
+* Credits
+We want to thank all contributors of [[https://forum.italia.it/c/fattura-pa][Forum Italia - Fatturazione Elettronica]] who have shared their snippets and any available info.
+
+* License
+GPLv3.
