@@ -40,7 +40,10 @@ class RicezioneFattureHandler
         // $metadataFilename = $request->NomeFileMetadati;
         // $metadata         = $request->Metadati;
         // ------------------------------------------------
-
+        // For example, to save files:
+        file_put_contents($request->NomeFile, $request->File);
+        file_put_contents($request->NomeFileMetadati, $request->Metadati);
+        
         // SOAP response        
         return new RispostaRiceviFatture(RispostaRiceviFatture::ER01);
     }
@@ -57,5 +60,7 @@ class RicezioneFattureHandler
         // $filename         = $request->NomeFile;
         // $file             = $request->File;
         // ------------------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
 }

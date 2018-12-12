@@ -36,6 +36,8 @@ class TrasmissioneFattureHandler
         // $filename = $request->NomeFile;
         // $file     = $request->File;
         // ----------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
 
     public function NotificaMancataConsegna( \StdClass $parametersIn )
@@ -50,6 +52,8 @@ class TrasmissioneFattureHandler
         // $filename = $request->NomeFile;
         // $file     = $request->File;
         // ----------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
 
     public function NotificaScarto( \StdClass $parametersIn )
@@ -64,6 +68,8 @@ class TrasmissioneFattureHandler
         // $filename = $request->NomeFile;
         // $file     = $request->File;
         // ----------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
     
     public function NotificaEsito( \StdClass $parametersIn )
@@ -78,6 +84,8 @@ class TrasmissioneFattureHandler
         // $filename = $request->NomeFile;
         // $file     = $request->File;
         // ----------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
 
     public function NotificaDecorrenzaTermini( \StdClass $parametersIn )
@@ -92,6 +100,8 @@ class TrasmissioneFattureHandler
         // $filename = $request->NomeFile;
         // $file     = $request->File;
         // ----------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
 
     public function AttestazioneTrasmissioneFattura( \StdClass $parametersIn )
@@ -106,5 +116,7 @@ class TrasmissioneFattureHandler
         // $filename = $request->NomeFile;
         // $file     = $request->File;
         // ----------------------------------------
+        // For example, to save file:
+        file_put_contents($request->NomeFile, $request->File);
     }
 }
