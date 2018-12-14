@@ -7,6 +7,9 @@ Please refer to
 - [[https://github.com/taocomp/php-sdicoop-invoice][PHP SdICoop - Invoice]] for italian electronic invoice management
 
 * Quickstart
+** Dependencies
+~php-soap~
+
 ** Web Service "TrasmissioneFatture"
 Just include ~examples/tramissione-fatture.php~ in your endpoint. For example, if your test endpoint is
 
