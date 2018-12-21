@@ -2,6 +2,8 @@
 
 A PHP package for implementing web services required by the [[https://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm?l=en][Italian Exchange System (aka "SdI")]].
 
+/(Pacchetto PHP per l'implementazione dei webservices TrasmissioneFatture e RicezioneFatture richiesti dal SdI)./
+
 Please refer to
 - [[https://github.com/taocomp/php-sdicoop-client][PHP SdICoop - Client]] to connect to SdI web services
 - [[https://github.com/taocomp/php-e-invoice-it][PHP E-invoice It]] for managing italian e-invoice and notice XML formats
