@@ -43,7 +43,7 @@ class FileSdI extends FileSdIBase
         return "IdentificativoSdI:{$this->IdentificativoSdI} " . parent::__toString();
     }
 
-    public function import( string $file )
+    public function import( $file )
     {
         parent::import($file);
 

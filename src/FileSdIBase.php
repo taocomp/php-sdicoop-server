@@ -47,7 +47,7 @@ class FileSdIBase
         return "NomeFile:{$this->NomeFile}";
     }
 
-    public function import( string $file )
+    public function import( $file )
     {
         if (false === is_readable($file)) {
             throw new \Exception("'$file' not found or not readable");
