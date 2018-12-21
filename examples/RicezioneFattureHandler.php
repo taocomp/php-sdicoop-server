@@ -19,10 +19,10 @@
  * along with php-sdicoop-server.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-use \Taocomp\Sdicoop\FileSdI;
-use \Taocomp\Sdicoop\FileSdIConMetadati;
-use \Taocomp\Sdicoop\RispostaRiceviFatture;
-use \Taocomp\Sdicoop\WebService;
+use Taocomp\Einvoicing\Sdicoop\FileSdI;
+use Taocomp\Einvoicing\Sdicoop\FileSdIConMetadati;
+use Taocomp\Einvoicing\Sdicoop\RispostaRiceviFatture;
+use Taocomp\Einvoicing\Sdicoop\WebService;
 
 class RicezioneFattureHandler
 {

@@ -22,17 +22,17 @@
 ini_set("soap.wsdl_cache_enabled", 0);
 ini_set('soap.wsdl_cache_ttl', 0);
 
-use \Taocomp\Sdicoop\WebService;
+use \Taocomp\Einvoicing\Sdicoop\WebService;
 
 try
 {
-    require_once(__DIR__ . '/../autoload.php');
+    require_once(__DIR__ . '/../vendor/autoload.php');
     require_once(__DIR__ . '/TrasmissioneFattureHandler.php');
 
-    $wsdl = __DIR__ . '/../wsdl/TrasmissioneFatture_v1.1.wsdl';
-    $srv = new WebService($wsdl);
-    $srv->setClass('\TrasmissioneFattureHandler');
-    $srv->handle();
+    $wsdl = __DIR__ . '/../assets/wsdl/TrasmissioneFatture_v1.1.wsdl';
+    $ws = new WebService($wsdl);
+    $ws->setClass('\TrasmissioneFattureHandler');
+    $ws->handle();
 }
 catch (\Exception $e)
 {
