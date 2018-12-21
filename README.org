@@ -15,9 +15,6 @@ See [[https://forum.italia.it/c/fattura-pa][Forum Italia - Fatturazione Elettron
 If you need a "ready to start" solution, or a consultancy for your PHP project, please feel free to contact us at [[mailto:e-invoicing@taocomp.com][e-invoicing@taocomp.com]].
 
 * Quickstart
-** Dependencies
-~php-soap~
-
 ** Web Service "TrasmissioneFatture"
 Just include ~examples/tramissione-fatture.php~ in your endpoint. For example, if your test endpoint is
 
@@ -47,7 +44,67 @@ require_once('/path/to/php-sdicoop-server/examples/ricezione-fatture.php');
 #+END_SRC
 
 * Getting started
-TODO
+** Dependencies
+- PHP 5.5+
+- ~php-soap~
+
+** Install
+*** Composer
+#+BEGIN_SRC 
+composer require taocomp/php-sdicoop-server
+#+END_SRC
+
+*** Manually
+- Clone/download the repository
+- ~require_once('/path/to/php-sdicoop-server/vendor/autoload.php');~
+
+** Setup
+*** Web service "TrasmissioneFatture"
+- Copy ~examples/TrasmissioneFattureHandler.php~ somewhere in your project and add logic for saving invoices and notices on filesystem and/or database
+- Copy then content of ~examples/trasmissione-fatture.php~ in your endpoint file
+- Modify paths accordingly
+
+For example, if your handler class is:
+#+BEGIN_SRC 
+class MyTrasmissioneFattureHandler
+{
+    //...
+}
+#+END_SRC
+
+saved in ~/path/to/MyTrasmissioneFattureHandler.php~, then the code in your endpoint will be:
+#+BEGIN_SRC 
+ini_set("soap.wsdl_cache_enabled", 0);
+ini_set('soap.wsdl_cache_ttl', 0);
+
+use \Taocomp\Einvoicing\Sdicoop\WebService;
+
+try
+{
+    require_once('/path/to/php-sdicoop-server/vendor/autoload.php');
+    require_once('/path/to/MyTrasmissioneFattureHandler.php');
+
+    $wsdl = '/path/to/php-sdicoop-server/assets/wsdl/TrasmissioneFatture_v1.1.wsdl';
+    $ws = new WebService($wsdl);
+    $ws->setClass('\MyTrasmissioneFattureHandler');
+    $ws->handle();
+}
+catch (\Exception $e)
+{
+    WebService::log($e->getMessage(), LOG_ERR);
+}
+#+END_SRC
+
+*** Web service "RicezioneFatture"
+Follow the same instructions as in "TrasmissioneFatture".
+
+** Logs
+Both web services write on system log.
+
+For example, when you receive a notice "RicevutaConsegna":
+#+BEGIN_SRC 
+Dec 14 23:52:32 web Taocomp\Einvoicing\Sdicoop\WebService: RicevutaConsegna IdentificativoSdI:7045996 NomeFile:ITXXXXXXXXXXX_00001_RC_002.xml
+#+END_SRC
 
 * Credits
 We want to thank all contributors of [[https://forum.italia.it/c/fattura-pa][Forum Italia - Fatturazione Elettronica]] who have shared their snippets and any available info.
