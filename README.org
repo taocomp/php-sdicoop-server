@@ -111,7 +111,7 @@ Both web services write on system log.
 
 For example, when you receive a notice "RicevutaConsegna":
 #+BEGIN_SRC 
-Dec 14 23:52:32 web Taocomp\Einvoicing\Sdicoop\WebService: RicevutaConsegna IdentificativoSdI:7045996 NomeFile:ITXXXXXXXXXXX_00001_RC_002.xml
+Dec 14 23:52:32 web Taocomp\Einvoicing\SdicoopServer\WebService: RicevutaConsegna IdentificativoSdI:7045996 NomeFile:ITXXXXXXXXXXX_00001_RC_002.xml
 #+END_SRC
 
 * Credits
