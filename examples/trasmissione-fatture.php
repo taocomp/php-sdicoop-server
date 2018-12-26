@@ -22,7 +22,7 @@
 ini_set("soap.wsdl_cache_enabled", 0);
 ini_set('soap.wsdl_cache_ttl', 0);
 
-use \Taocomp\Einvoicing\Sdicoop\WebService;
+use \Taocomp\Einvoicing\SdicoopServer\WebService;
 
 try
 {

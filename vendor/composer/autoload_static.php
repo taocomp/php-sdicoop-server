@@ -21,7 +21,7 @@ class ComposerStaticInitceecb70b862674d8b1fe152f5dcd21b6
         ),
         'T' => 
         array (
-            'Taocomp\\Einvoicing\\Sdicoop\\' => 27,
+            'Taocomp\\Einvoicing\\SdicoopServer\\' => 33,
         ),
         'D' => 
         array (
@@ -41,7 +41,7 @@ class ComposerStaticInitceecb70b862674d8b1fe152f5dcd21b6
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'Taocomp\\Einvoicing\\Sdicoop\\' => 
+        'Taocomp\\Einvoicing\\SdicoopServer\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

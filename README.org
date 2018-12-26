@@ -58,6 +58,14 @@ composer require taocomp/php-sdicoop-server
 - Clone/download the repository
 - ~require_once('/path/to/php-sdicoop-server/vendor/autoload.php');~
 
+*** Namespaces
+Please note namespace is changed (v0.1.1), it is now ~Taocomp\Einvoicing\SdicoopServer~.
+
+So to use e.g. ~WebService~ class:
+#+BEGIN_SRC 
+use \Taocomp\Einvoicing\SdicoopServer\WebService;
+#+END_SRC
+
 ** Setup
 *** Web service "TrasmissioneFatture"
 - Copy ~examples/TrasmissioneFattureHandler.php~ somewhere in your project and add logic for saving invoices and notices on filesystem and/or database

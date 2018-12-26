@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Taocomp\Einvoicing\Sdicoop\WebService;
+use Taocomp\Einvoicing\SdicoopServer\WebService;
 
 class WebServiceTest extends TestCase
 {
