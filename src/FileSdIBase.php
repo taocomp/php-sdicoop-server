@@ -51,7 +51,9 @@ class FileSdIBase
             if (!property_exists($parametersIn, 'File')) {
                 throw new \Exception("Cannot find property 'File'");
             }
-        
+		$estensione=end(explode($this->NomeFile));
+	    	if(strcmp("p7m",$estensione)===0 || strcmp("P7M",$estensione)===0 || strcmp("p7M",$estensione)===0 || 
+		strcmp("P7m",$estensione)===0) $this->isP7M=TRUE;
             $this->NomeFile = $parametersIn->NomeFile;
             $this->File = $parametersIn->File;
             $this->removeBOM();
