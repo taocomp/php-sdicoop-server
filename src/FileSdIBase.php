@@ -25,6 +25,22 @@ class FileSdIBase
 {
     public $NomeFile = null;
     public $File = null;
+    private $BOM = array("\xEF\xBB\xBF",
+	    "\xFE\xFF",
+	    "\xFF\xFE",
+	    "\x00\x00\xFE\xFF",
+	    "\xFF\xFE\x00\x00",
+	    "\x2B\x2F\x76\x38",
+	    "\x2B\x2F\x76\x39",
+	    "\x2B\x2F\x76\x2B",
+	    "\x2B\x2F\x76\x2F",
+	    "\x2B\x2F\x76\x38\x2D",
+	    "\xF7\x64\x4C",
+	    "\xDD\x73\x66\x73",
+	    "\x0E\xFE\xFF",
+	    "\xFB\xEE\x28",
+	    "\x84\x31\x95\x33");
+    private $isP7M=FALSE;
 
     public function __construct( \StdClass $parametersIn = null )
     {
@@ -52,7 +68,9 @@ class FileSdIBase
         if (false === is_readable($file)) {
             throw new \Exception("'$file' not found or not readable");
         }
-
+	    $estensione=end(explode($file));
+	    if(strcmp("p7m",$estensione)===0 || strcmp("P7M",$estensione)===0 || strcmp("p7M",$estensione)===0 || 
+		strcmp("P7m",$estensione)===0) $this->isP7M=TRUE;
         $this->NomeFile = basename($file);
         $this->File = file_get_contents($file);
         $this->removeBOM();
@@ -61,15 +79,17 @@ class FileSdIBase
     }
 
     /**
-     * Remove UTF-8 BOM
+     * If is P7M do nothing, else remove ALL UTF BOM charachters
      *
-     * Credits: https://forum.italia.it/u/Francesco_Biegi
-     * See https://forum.italia.it/t/risolto-notifica-di-scarto-content-is-not-allowed-in-prolog/5798/7
      */
     public function removeBOM()
     {
-        $this->File = str_replace("\xEF\xBB\xBF", '', $this->File);
-
-        return $this;
+        if($this->isP7M){
+	    return $this;
+	    }
+	else{
+	    $this->File = str_replace($this->BOM, '', $this->File);
+	    return $this;
+	    }
     }
 }
