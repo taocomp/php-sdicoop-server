@@ -24,6 +24,7 @@ namespace Taocomp\Einvoicing\SdicoopServer;
 class RispostaRiceviFatture
 {
     const ER01 = 'ER01';
+    const ER00 = 'ER00';
 
     public $Esito = self::ER01;
 
