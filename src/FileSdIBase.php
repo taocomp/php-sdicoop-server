@@ -51,7 +51,7 @@ class FileSdIBase
             if (!property_exists($parametersIn, 'File')) {
                 throw new \Exception("Cannot find property 'File'");
             }
-		$estensione=end(explode($this->NomeFile));
+		$estensione=end(explode($parametersIn->NomeFile));
 	    	if(strcmp("p7m",$estensione)===0 || strcmp("P7M",$estensione)===0 || strcmp("p7M",$estensione)===0 || 
 		strcmp("P7m",$estensione)===0) $this->isP7M=TRUE;
             $this->NomeFile = $parametersIn->NomeFile;
@@ -81,7 +81,7 @@ class FileSdIBase
     }
 
     /**
-     * If is P7M do nothing, else remove ALL UTF BOM charachters
+     * If is P7M do nothing, else remove ALL UTF BOM chars
      *
      */
     public function removeBOM()
