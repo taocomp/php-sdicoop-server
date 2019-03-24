@@ -25,6 +25,7 @@ class FileSdIBase
 {
     public $NomeFile = null;
     public $File = null;
+	/* Set and array of UTF BOM chars, just in case of need */
     private $BOM = array("\xEF\xBB\xBF",
 	    "\xFE\xFF",
 	    "\xFF\xFE",
@@ -40,7 +41,6 @@ class FileSdIBase
 	    "\x0E\xFE\xFF",
 	    "\xFB\xEE\x28",
 	    "\x84\x31\x95\x33");
-    private $isP7M=FALSE;
 
     public function __construct( \StdClass $parametersIn = null )
     {
@@ -51,9 +51,7 @@ class FileSdIBase
             if (!property_exists($parametersIn, 'File')) {
                 throw new \Exception("Cannot find property 'File'");
             }
-		$estensione=end(explode(".",$parametersIn->NomeFile));
-	    	if(strcmp("p7m",$estensione)===0 || strcmp("P7M",$estensione)===0 || strcmp("p7M",$estensione)===0 || 
-		strcmp("P7m",$estensione)===0) $this->isP7M=TRUE;
+	    
             $this->NomeFile = $parametersIn->NomeFile;
             $this->File = $parametersIn->File;
             $this->removeBOM();
@@ -70,9 +68,6 @@ class FileSdIBase
         if (false === is_readable($file)) {
             throw new \Exception("'$file' not found or not readable");
         }
-	    $estensione=end(explode(".",$file));
-	    if(strcmp("p7m",$estensione)===0 || strcmp("P7M",$estensione)===0 || strcmp("p7M",$estensione)===0 || 
-		strcmp("P7m",$estensione)===0) $this->isP7M=TRUE;
         $this->NomeFile = basename($file);
         $this->File = file_get_contents($file);
         $this->removeBOM();
@@ -81,17 +76,10 @@ class FileSdIBase
     }
 
     /**
-     * If is P7M do nothing, else remove ALL UTF BOM chars
-     *
+     * Do nothing
      */
     public function removeBOM()
     {
-        if($this->isP7M){
-	    return $this;
-	    }
-	else{
-	    $this->File = str_replace($this->BOM, '', $this->File);
-	    return $this;
-	    }
+        return $this;
     }
 }
