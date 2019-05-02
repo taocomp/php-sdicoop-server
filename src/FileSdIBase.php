@@ -25,22 +25,6 @@ class FileSdIBase
 {
     public $NomeFile = null;
     public $File = null;
-	/* Set and array of UTF BOM chars, just in case of need */
-    private $BOM = array("\xEF\xBB\xBF",
-	    "\xFE\xFF",
-	    "\xFF\xFE",
-	    "\x00\x00\xFE\xFF",
-	    "\xFF\xFE\x00\x00",
-	    "\x2B\x2F\x76\x38",
-	    "\x2B\x2F\x76\x39",
-	    "\x2B\x2F\x76\x2B",
-	    "\x2B\x2F\x76\x2F",
-	    "\x2B\x2F\x76\x38\x2D",
-	    "\xF7\x64\x4C",
-	    "\xDD\x73\x66\x73",
-	    "\x0E\xFE\xFF",
-	    "\xFB\xEE\x28",
-	    "\x84\x31\x95\x33");
 
     public function __construct( \StdClass $parametersIn = null )
     {
