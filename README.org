@@ -12,19 +12,17 @@ See [[https://forum.italia.it/c/fattura-pa][Forum Italia - Fatturazione Elettron
 - Apache configuration :: [[https://forum.italia.it/t/accreditamento-sdicoop-configurazione-ssl-su-apache/3314][Accreditamento SDICoop: configurazione SSL su Apache - Fatturazione Elettroni...]]
 - Interoperability tests :: [[https://forum.italia.it/t/test-interoperabilita-soluzioni/4370][Test Interoperabilità Soluzioni - Fatturazione Elettronica - Forum Italia]]
 
-If you need a "ready to start" solution, or a consultancy for your PHP project, please feel free to contact us at [[mailto:e-invoicing@taocomp.com][e-invoicing@taocomp.com]].
-
 * Quickstart
 ** Web Service "TrasmissioneFatture"
 Just include ~examples/tramissione-fatture.php~ in your endpoint. For example, if your test endpoint is
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 https://test.example.com/trasmissione/index.php
 #+END_SRC
 
 put the following code in your ~index.php~:
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 <?php
 require_once('/path/to/php-sdicoop-server/examples/trasmissione-fatture.php');
 #+END_SRC
@@ -32,13 +30,13 @@ require_once('/path/to/php-sdicoop-server/examples/trasmissione-fatture.php');
 ** Web Service "RicezioneFatture"
 Just include ~examples/ricezione-fatture.php~ in your endpoint. For example, if your test endpoint is
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 https://test.example.com/ricezione/index.php
 #+END_SRC
 
 put the following code in your ~index.php~:
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 <?php
 require_once('/path/to/php-sdicoop-server/examples/ricezione-fatture.php');
 #+END_SRC
@@ -50,7 +48,7 @@ require_once('/path/to/php-sdicoop-server/examples/ricezione-fatture.php');
 
 ** Install
 *** Composer
-#+BEGIN_SRC 
+#+BEGIN_SRC
 composer require taocomp/php-sdicoop-server
 #+END_SRC
 
@@ -62,7 +60,7 @@ composer require taocomp/php-sdicoop-server
 Please note namespace is changed (v0.1.1), it is now ~Taocomp\Einvoicing\SdicoopServer~.
 
 So to use e.g. ~WebService~ class:
-#+BEGIN_SRC 
+#+BEGIN_SRC
 use \Taocomp\Einvoicing\SdicoopServer\WebService;
 #+END_SRC
 
@@ -73,7 +71,7 @@ use \Taocomp\Einvoicing\SdicoopServer\WebService;
 - Modify paths accordingly
 
 For example, if your handler class is:
-#+BEGIN_SRC 
+#+BEGIN_SRC
 class MyTrasmissioneFattureHandler
 {
     //...
@@ -81,7 +79,7 @@ class MyTrasmissioneFattureHandler
 #+END_SRC
 
 saved in ~/path/to/MyTrasmissioneFattureHandler.php~, then the code in your endpoint will be:
-#+BEGIN_SRC 
+#+BEGIN_SRC
 ini_set("soap.wsdl_cache_enabled", 0);
 ini_set('soap.wsdl_cache_ttl', 0);
 
@@ -110,7 +108,7 @@ Follow the same instructions as in "TrasmissioneFatture".
 Both web services write on system log.
 
 For example, when you receive a notice "RicevutaConsegna":
-#+BEGIN_SRC 
+#+BEGIN_SRC
 Dec 14 23:52:32 web Taocomp\Einvoicing\SdicoopServer\WebService: RicevutaConsegna IdentificativoSdI:7045996 NomeFile:ITXXXXXXXXXXX_00001_RC_002.xml
 #+END_SRC
 
